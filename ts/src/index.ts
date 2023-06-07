@@ -108,3 +108,24 @@ class Person implements PersonInterface {
     }
 }
 
+// extends class
+class Employee extends Person {
+    position: string;
+
+    constructor(id:number,name:string,position:string) {
+        super(id,name);
+        this.position = position;
+    }
+}
+
+// Generics
+function getArray<T>(items:T[]): T[] {
+    return new Array().concat(items);
+}
+
+let numArray = getArray<number>([1,2,3,4]);
+
+let strArray = getArray<string>(['brad','John','Jill']);
+
+numArray.push(1);
+strArray.push('Hello');
